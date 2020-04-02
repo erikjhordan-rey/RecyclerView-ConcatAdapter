@@ -42,10 +42,6 @@ class HomeActivity : AppCompatActivity() {
         binding.recyclerView.adapter = mergeAdapter
     }
 
-    private fun initNewsReceiver() {
-        newsReceiver { newsAdapter.submitList(it) }
-    }
-
     private fun createNewsAdapter() = newsAdapter.apply {
         submitList(createNewsList())
         onNewsListener = { Snackbar.make(binding.root, it.title, Snackbar.LENGTH_LONG).show() }
@@ -54,5 +50,9 @@ class HomeActivity : AppCompatActivity() {
     private fun createTrendingAdapter() = trendingAdapter.apply {
         submitList(createTrendingList())
         onTrendingListener = { Snackbar.make(binding.root, it.title, Snackbar.LENGTH_LONG).show() }
+    }
+
+    private fun initNewsReceiver() {
+        newsReceiver { newsAdapter.submitList(it) }
     }
 }

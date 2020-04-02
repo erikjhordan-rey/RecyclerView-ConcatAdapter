@@ -5,7 +5,26 @@ a new RecyclerView Adapter that can combine multiple adapters linearly.
 
 ## Sample
 
+**LinearLayoutManager (Vertical)**
+
 <img src="./art/Screenshot.png" width="220">
+
+
+**GridLayoutManager**
+
+<img src="./art/Screenshot2.png" width="220">
+
+```xml
+
+    <androidx.recyclerview.widget.RecyclerView
+        ...
+        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+```
+
+ 
+Consider to add horizontal orientation `android:orientation="horizontal"` to GridLayoutManager or LinearLayoutManager to try it. 
 
 Do you want to contribute?
 --------------------------
