@@ -46,20 +46,23 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun createTopicsHeaderAdapter() = topicsHeaderAdapter.apply {
-        onTopicsHeaderListener = { Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show() }
+        onTopicsHeaderListener = { showSnackbar(it) }
     }
 
     private fun createTrendingAdapter() = trendingAdapter.apply {
         submitList(createTrendingList())
-        onTrendingListener = { Snackbar.make(binding.root, it.title, Snackbar.LENGTH_LONG).show() }
+        onTrendingListener = { showSnackbar(it.title) }
+        onSeeMoreListener = { showSnackbar(it) }
     }
 
     private fun createNewsAdapter() = newsAdapter.apply {
         submitList(createNewsList())
-        onNewsListener = { Snackbar.make(binding.root, it.title, Snackbar.LENGTH_LONG).show() }
+        onNewsListener = { showSnackbar(it.title) }
     }
 
     private fun initNewsReceiver() {
         newsReceiver { newsAdapter.submitList(it) }
     }
+
+    private fun showSnackbar(message: String) = Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
 }
