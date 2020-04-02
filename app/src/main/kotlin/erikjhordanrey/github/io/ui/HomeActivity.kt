@@ -14,9 +14,9 @@ import erikjhordanrey.github.io.ui.adapter.TrendingAdapter
 
 class HomeActivity : AppCompatActivity() {
 
-    private val newsAdapter by lazy { NewsAdapter() }
-    private val trendingAdapter by lazy { TrendingAdapter() }
     private val headerAdapter by lazy { TopicsHeaderAdapter() }
+    private val trendingAdapter by lazy { TrendingAdapter() }
+    private val newsAdapter by lazy { NewsAdapter() }
 
     private lateinit var binding: ActivityHomeBinding
 
@@ -44,14 +44,14 @@ class HomeActivity : AppCompatActivity() {
         binding.recyclerView.adapter = mergeAdapter
     }
 
-    private fun createNewsAdapter() = newsAdapter.apply {
-        submitList(createNewsList())
-        onNewsListener = { Snackbar.make(binding.root, it.title, Snackbar.LENGTH_LONG).show() }
-    }
-
     private fun createTrendingAdapter() = trendingAdapter.apply {
         submitList(createTrendingList())
         onTrendingListener = { Snackbar.make(binding.root, it.title, Snackbar.LENGTH_LONG).show() }
+    }
+
+    private fun createNewsAdapter() = newsAdapter.apply {
+        submitList(createNewsList())
+        onNewsListener = { Snackbar.make(binding.root, it.title, Snackbar.LENGTH_LONG).show() }
     }
 
     private fun initNewsReceiver() {
