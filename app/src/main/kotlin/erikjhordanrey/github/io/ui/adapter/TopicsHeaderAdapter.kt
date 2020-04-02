@@ -7,14 +7,21 @@ import erikjhordanrey.github.io.databinding.ItemTopicsHeaderBinding
 
 class TopicsHeaderAdapter : RecyclerView.Adapter<TopicsHeaderViewHolder>() {
 
+    var onTopicsHeaderListener: ((String) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            TopicsHeaderViewHolder(ItemTopicsHeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+            TopicsHeaderViewHolder(ItemTopicsHeaderBinding.inflate(LayoutInflater.from(parent.context), parent, false),
+                    onTopicsHeaderListener)
 
     override fun onBindViewHolder(holderTopics: TopicsHeaderViewHolder, position: Int) {
         holderTopics.bind()
     }
 
     override fun getItemCount() = HEADER
+
+    fun onClear() {
+        onTopicsHeaderListener = null
+    }
 
     companion object {
         private const val HEADER = 1

@@ -14,7 +14,7 @@ import erikjhordanrey.github.io.ui.adapter.TrendingAdapter
 
 class HomeActivity : AppCompatActivity() {
 
-    private val headerAdapter by lazy { TopicsHeaderAdapter() }
+    private val topicsHeaderAdapter by lazy { TopicsHeaderAdapter() }
     private val trendingAdapter by lazy { TrendingAdapter() }
     private val newsAdapter by lazy { NewsAdapter() }
 
@@ -31,6 +31,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        topicsHeaderAdapter.onClear()
         trendingAdapter.onClear()
         newsAdapter.onClear()
     }
@@ -40,8 +41,12 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        val mergeAdapter = MergeAdapter(headerAdapter, createTrendingAdapter(), createNewsAdapter())
+        val mergeAdapter = MergeAdapter(createTopicsHeaderAdapter(), createTrendingAdapter(), createNewsAdapter())
         binding.recyclerView.adapter = mergeAdapter
+    }
+
+    private fun createTopicsHeaderAdapter() = topicsHeaderAdapter.apply {
+        onTopicsHeaderListener = { Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show() }
     }
 
     private fun createTrendingAdapter() = trendingAdapter.apply {
