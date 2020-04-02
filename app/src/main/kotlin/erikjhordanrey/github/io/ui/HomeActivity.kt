@@ -8,6 +8,7 @@ import erikjhordanrey.github.io.data.createNewsList
 import erikjhordanrey.github.io.data.createTrendingList
 import erikjhordanrey.github.io.data.newsReceiver
 import erikjhordanrey.github.io.databinding.ActivityHomeBinding
+import erikjhordanrey.github.io.ui.adapter.TopicsHeaderAdapter
 import erikjhordanrey.github.io.ui.adapter.NewsAdapter
 import erikjhordanrey.github.io.ui.adapter.TrendingAdapter
 
@@ -15,6 +16,7 @@ class HomeActivity : AppCompatActivity() {
 
     private val newsAdapter by lazy { NewsAdapter() }
     private val trendingAdapter by lazy { TrendingAdapter() }
+    private val headerAdapter by lazy { TopicsHeaderAdapter() }
 
     private lateinit var binding: ActivityHomeBinding
 
@@ -38,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        val mergeAdapter = MergeAdapter(createTrendingAdapter(), createNewsAdapter())
+        val mergeAdapter = MergeAdapter(headerAdapter, createTrendingAdapter(), createNewsAdapter())
         binding.recyclerView.adapter = mergeAdapter
     }
 
