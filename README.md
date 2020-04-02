@@ -5,7 +5,7 @@ a new RecyclerView Adapter that can combine multiple adapters linearly.
 
 ## Sample
 
-![](./art/Screenshot.png)
+<img src="./art/Screenshot.png" width="220">
 
 Do you want to contribute?
 --------------------------
