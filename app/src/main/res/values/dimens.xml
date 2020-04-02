@@ -1,0 +1,11 @@
+<resources>
+    <!--Text Sizes-->
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="inter_text">14sp</dimen>
+    <dimen name="medium_text">16sp</dimen>
+
+    <!--Generic Spaces-->
+    <dimen name="space_0">0dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+</resources>

@@ -1,0 +1,2 @@
+rootProject.name='RecyclerView-MergeAdapter'
+include ':app'
