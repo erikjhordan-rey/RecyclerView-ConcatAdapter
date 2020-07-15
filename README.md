@@ -1,9 +1,9 @@
-# RecyclerView-MergeAdapter
+# RecyclerView-ConcatAdapter
 
-The main goal is to practice [RecyclerView MergeAdapter](https://developer.android.com/jetpack/androidx/releases/recyclerview#version_120_2) 
+The main goal is to practice [RecyclerView ConcatAdapter](https://developer.android.com/jetpack/androidx/releases/recyclerview#version_120_2) 
 a new RecyclerView Adapter that can combine multiple adapters linearly.
 
-Read more about [Merge adapters sequentially with MergeAdapter](https://medium.com/androiddevelopers/merge-adapters-sequentially-with-mergeadapter-294d2942127a) by Florina Muntenescu.
+Read more about [Concatenate adapters sequentially with ConcatAdapter](https://medium.com/androiddevelopers/merge-adapters-sequentially-with-mergeadapter-294d2942127a) by Florina Muntenescu.
 
 ## Sample
 

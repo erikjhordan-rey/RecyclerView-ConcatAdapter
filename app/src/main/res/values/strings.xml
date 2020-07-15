@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RecyclerView-MergeAdapter</string>
+    <string name="app_name">RecyclerView-ConcatAdapter</string>
     <string name="header_text">Topics Header</string>
     <string name="view_type_text">Trending ViewType</string>
 </resources>

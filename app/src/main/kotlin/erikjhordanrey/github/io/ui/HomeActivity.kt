@@ -2,7 +2,8 @@ package erikjhordanrey.github.io.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.MergeAdapter
+import androidx.recyclerview.widget.ConcatAdapter
+
 import com.google.android.material.snackbar.Snackbar
 import erikjhordanrey.github.io.data.createNewsList
 import erikjhordanrey.github.io.data.createTrendingList
@@ -41,8 +42,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        val mergeAdapter = MergeAdapter(createTopicsHeaderAdapter(), createTrendingAdapter(), createNewsAdapter())
-        binding.recyclerView.adapter = mergeAdapter
+        val concatAdapter = ConcatAdapter(createTopicsHeaderAdapter(), createTrendingAdapter(), createNewsAdapter())
+        binding.recyclerView.adapter = concatAdapter
     }
 
     private fun createTopicsHeaderAdapter() = topicsHeaderAdapter.apply {
