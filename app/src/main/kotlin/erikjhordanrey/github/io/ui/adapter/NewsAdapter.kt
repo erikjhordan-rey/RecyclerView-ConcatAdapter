@@ -17,8 +17,4 @@ class NewsAdapter : ListAdapter<News, NewsViewHolder>(NewsDiffCallback()) {
         val news = getItem(position)
         holder.bind(news)
     }
-
-    fun onClear() {
-        onNewsListener = null
-    }
 }

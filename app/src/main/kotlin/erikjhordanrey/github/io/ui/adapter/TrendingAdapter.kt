@@ -34,11 +34,6 @@ class TrendingAdapter : ListAdapter<Trending, RecyclerView.ViewHolder>(TrendingD
 
     private fun bindSeeMore(holder: RecyclerView.ViewHolder) = (holder as TrendingViewTypeViewHolder).bind()
 
-    fun onClear() {
-        onTrendingListener = null
-        onSeeMoreListener = null
-    }
-
     companion object {
 
         private const val ITEM_TRENDING_TYPE = -1

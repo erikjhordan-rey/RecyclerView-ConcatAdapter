@@ -3,7 +3,6 @@ package erikjhordanrey.github.io.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ConcatAdapter
-
 import com.google.android.material.snackbar.Snackbar
 import erikjhordanrey.github.io.data.createNewsList
 import erikjhordanrey.github.io.data.createTrendingList
@@ -28,13 +27,6 @@ class HomeActivity : AppCompatActivity() {
         initToolbar()
         initRecyclerView()
         initNewsReceiver()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        topicsHeaderAdapter.onClear()
-        trendingAdapter.onClear()
-        newsAdapter.onClear()
     }
 
     private fun initToolbar() {

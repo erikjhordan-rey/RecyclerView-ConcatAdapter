@@ -19,10 +19,6 @@ class TopicsHeaderAdapter : RecyclerView.Adapter<TopicsHeaderViewHolder>() {
 
     override fun getItemCount() = HEADER
 
-    fun onClear() {
-        onTopicsHeaderListener = null
-    }
-
     companion object {
         private const val HEADER = 1
     }
